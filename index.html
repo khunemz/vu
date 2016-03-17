@@ -3,10 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>vu</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
   </head>
   <body>
     <app></app>
     <!-- built files will be auto injected -->
-    This is vue app. Yeahh.
+   	<div class="container">
+   		<div id="tasks">
+   			{{ heading}}
+   		</div>
+   	</div>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js" /></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vue.min.js"></script>
+   	<script type="text/javascript" src="app.js"></script>
   </body>
 </html>
