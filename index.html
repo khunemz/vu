@@ -3,20 +3,50 @@
   <head>
     <meta charset="utf-8">
     <title>vu</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
   </head>
   <body>
-    <app></app>
-    <!-- built files will be auto injected -->
    	<div class="container">
    		<div id="tasks">
-   			{{ heading}}
+	   		<div>
+	   			<h2>Tasks ({{ tasks.length }})</h2>
+
+	   			<ol class="list-group" v-on="submit: addTask">
+	   				<li v-for="task in tasks | inProcess"
+	   				class="list-group-item">
+
+		   				<span v-on:dblclick="editTask(task)">{{ task.body }}
+						</span>
+
+						<button class="close" aria-hidden="true" data-dismiss="list-group-item" 
+		   				v-on:click="removeTask(task)"
+		   				>&times;</button>
+
+	   				</li>
+	   			</ol>
+	
+	   		</div>
+
+	   		<form class="form-group">
+	   			<div class="form-group">
+	   				<input v-model="newTask"
+	   				v-el="newTask"
+	   				class="form-control" type="text" placeholder="I need">
+	   			</div>
+	   			<button v-on:click="addTask" class="btn btn-default">Add Task</button>
+	   		</form>
+
    		</div>
    	</div>
 
+   	<script type="text/javascript">
+   		
+   	</script>
+
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js" /></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="vue.min.js"></script>
+    <script type="text/javascript" src="vue.js"></script>
    	<script type="text/javascript" src="app.js"></script>
   </body>
 </html>
